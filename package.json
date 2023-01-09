@@ -1,0 +1,17 @@
+{
+  "name": "virtuallabs",
+  "version": "0.0.1",
+  "description": "assignment for iitb",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "asad",
+    "indian institute of technology bombay"
+  ],
+  "author": "mohammad asad",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^9.15.0"
+  }
+}

@@ -1,0 +1,19 @@
+CACHE MANIFEST
+# v1.0 : 2023/01/08
+ 
+CACHE:
+# pages
+index.html
+404.html
+ 
+# styles & scripts
+assets/vendor/bootstrap/css/bootstrap.min.css
+assets/css/mainstyling.css   
+assets/js/datatables-int.js
+assets/vendor/jquery/jquery.js
+ 
+# images
+assets/img/iitb.jpg
+ 
+FALLBACK:
+#//404.html
