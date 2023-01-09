@@ -48,6 +48,7 @@
             <span class="text-primary mdisplay-4">
               &nbsp;IIT Bombay | VirtualLabs | Assignment
             </span>
+            
             <!-- Topbar Navbar -->
             <span class="text-primary small">by Mohammad Asad</span>
           </nav>
@@ -63,81 +64,85 @@
                 <div class="row">
                   <div class="col-md-2">
                     <p class="text-darks">Begin Date</p>
-                <button type="button" class="btn btn-primary afw c1">05/11/2019 
+                <button type="button" class="btn btn-primary afw c1" id="date">05/11/2019 
                   <i class="icon-cal"></i>
                 </button>
                   </div>
                   <div class="col-md-2">
                     <p class="text-darks">End Date</p>
-                <button type="button" class="btn btn-primary afw c2 form-control datepicker" data-provide="datepicker">
-                  12/12/2019
+                <button type="button" id="ddate" class="btn btn-primary afw c2 form-control datepicker" data-provide="datepicker">
+                  12/11/2019
                   <i class="icon-cal"></i></button>
                   </div><div class="col-md-2">
                     <p class="text-darks">Status</p>
                     <div class="dropdown">
                       <button class="btn btn-danger afw c3" type="button" id="statusMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Any<i class="icon-down"></i>
+                        <span>Any</span><i class="icon-down"></i>
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Any</a>
-                        <a class="dropdown-item" href="#">Draft</a>
-                        <a class="dropdown-item" href="#">Paid</a>
-                        <a class="dropdown-item" href="#">Partial Paid</a>
+                        <a class="dropdown-item any " href="#" id="any">Any</a>
+                        <a class="dropdown-item draft" href="#" id="draft">Draft</a>
+                        <a class="dropdown-item paid" href="#" id="paid">Paid</a>
+                        <a class="dropdown-item pp" href="#" id="pp">Partial Payment</a>
                       </div>
                     </div>
                 </div><div class="col-md-2">
                   <p class="text-darks">Client</p>
                   <div class="dropdown">
                     <button class="btn btn-primary afw c4" type="button" id="clientMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Any<i class="icon-down"></i>
+                      <span>Any</span><i class="icon-down"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#">Any</a>
-                      <a class="dropdown-item" href="#">A-F</a>
-                      <a class="dropdown-item" href="#">G-Z</a>
+                      <a class="dropdown-item any" href="#" id="any">Any</a>
+                      <a class="dropdown-item" href="#" id="in">In-State</a>
+                      <a class="dropdown-item" href="#" id="out">Out-State</a>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-4"></div>
                 </div>
                 <br>
-                  *This data has been shown according to your given information
+                  *This data has been shown according to your given informations
                 </p>
               </div>
             </div>
 
             <div class="mcard shadow mb-4">
               <div class="mtable-body l">
-                <table class="table table-borderless mp-auto ml-auto">
+                <table class="table table-borderless px-auto ml-0">
                   <thead class="mtableth text-left">
                     <tr>
-                      <th>
+                      <th id="in">
                         Invoice
-                        <img src="assets/img/sort-18.png" class="active" />
+                        <img src="assets/img/sort-18.png" class="ici1 active" />
                       </th>
-                      <th>
+                      <th id="cn">
                         Client Name
-                        <img src="assets/img/sort-18.png" />
+                        <img src="assets/img/sort-18.png" class="ici2"/>
                       </th>
-                      <th>
+                      <th id="ct">
+                        Client Type
+                        <img src="assets/img/sort-18.png"  class="ici3"/>
+                      </th>
+                      <th id="da">
                         Date
-                        <img src="assets/img/sort-18.png" />
+                        <img src="assets/img/sort-18.png"  class="ici4"/>
                       </th>
-                      <th>
+                      <th id="dd">
                         Due Date
-                        <img src="assets/img/sort-18.png" />
+                        <img src="assets/img/sort-18.png"  class="ici5"/>
                       </th>
-                      <th>
+                      <th id="to">
                         Total
-                        <img src="assets/img/sort-18.png" />
+                        <img src="assets/img/sort-18.png"  class="ici6" />
                       </th>
-                      <th>
+                      <th id="ba">
                         Balance
-                        <img src="assets/img/sort-18.png" />
+                        <img src="assets/img/sort-18.png"  class="ici7"/>
                       </th>
-                      <th>
+                      <th id="ps">
                         Pay Status
-                        <img src="assets/img/sort-18.png" />
+                        <img src="assets/img/sort-18.png"  class="ici8"/>
                       </th>
                     </tr>
                   </thead>
@@ -155,6 +160,7 @@
                       <tr>
                         <th>Invoice</th>
                         <th>Client Name</th>
+                        <th>Client Type</th>
                         <th>Date</th>
                         <th>Due Date</th>
                         <th>Total</th>
@@ -167,6 +173,7 @@
                       <!-- <tr>
                         <td>1</td>
                         <td>M Asad</td>
+                        <td>in-state</td>
                         <td>08/11/2019</td>
                         <td>16/11/2019</td>
                         <td>$320</td>

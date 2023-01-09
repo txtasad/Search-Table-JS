@@ -3,6 +3,7 @@
       {
         "inv": "1",
         "client": "M Asad",
+        "type": "in-state",
         "date": "08/11/2019",
         "duedate": "16/11/2019",
         "total": "$320",
@@ -13,6 +14,7 @@
         "inv": "2",
         "client": "Asad M",
         "date": "02/11/2019",
+        "type": "out-state",
         "duedate": "12/11/2019",
         "total": "$320",
         "balance": "$320",
@@ -22,7 +24,8 @@
         "inv": "3",
         "client": "A M",
         "date": "03/11/2019",
-        "duedate": "12/11/2019",
+        "type": "in-state",
+        "duedate": "18/11/2019",
         "total": "$320",
         "balance": "$320",
         "status": "Paid"
@@ -31,7 +34,8 @@
         "inv": "4",
         "client": "Mike",
         "date": "06/11/2019",
-        "duedate": "12/11/2019",
+        "type": "out-state",
+        "duedate": "07/11/2019",
         "total": "$320",
         "balance": "$320",
         "status": "Partial Payment"
@@ -40,8 +44,9 @@
         "inv": "5",
         "client": "Michal",
         "date": "07/11/2019",
-        "duedate": "12/11/2019",
+        "duedate": "08/11/2019",
         "total": "$320",
+        "type": "in-state",
         "balance": "$320",
         "status": "Paid"
       },
@@ -49,16 +54,18 @@
         "inv": "6",
         "client": "Michael B",
         "date": "08/11/2019",
-        "duedate": "12/11/2019",
+        "duedate": "09/11/2019",
         "total": "$320",
+        "type": "in-state",
         "balance": "$320",
         "status": "Paid"
       },
       {
         "inv": "7",
         "client": "Larsoin Tarb",
+        "type": "out-state",
         "date": "09/11/2019",
-        "duedate": "12/11/2019",
+        "duedate": "10/11/2019",
         "total": "$320",
         "balance": "$320",
         "status": "Draft"
@@ -66,6 +73,7 @@
       {
         "inv": "8",
         "client": "Jum Joe",
+        "type": "out-state",
         "date": "08/11/2019",
         "duedate": "12/11/2019",
         "total": "$220",
@@ -75,6 +83,7 @@
       {
         "inv": "9",
         "client": "Vitor Belfy",
+        "type": "in-state",
         "date": "05/11/2019",
         "duedate": "12/11/2019",
         "total": "$678.00",
@@ -84,6 +93,7 @@
       {
         "inv": "10",
         "client": "Tom Ridl",
+        "type": "in-state",
         "date": "05/11/2019",
         "duedate": "15/11/2019",
         "total": "$320",
@@ -92,6 +102,7 @@
       },
       {
         "inv": "11",
+        "type": "out-state",
         "client": "Tom Hardy",
         "date": "05/11/2019",
         "duedate": "10/11/2019",
@@ -102,6 +113,7 @@
       {
         "inv": "12",
         "client": "Thomas Lynial",
+        "type": "in-state",
         "date": "05/11/2019",
         "duedate": "12/11/2019",
         "total": "$678.00",
@@ -111,6 +123,7 @@
       {
         "inv": "13",
         "client": "Jason Jornal",
+        "type": "out-state",
         "date": "05/11/2019",
         "duedate": "12/11/2019",
         "total": "$678.00",
@@ -120,6 +133,7 @@
       {
         "inv": "14",
         "client": "Micheal Strikes",
+        "type": "in-state",
         "date": "05/11/2019",
         "duedate": "12/11/2019",
         "total": "$678.00",
@@ -130,6 +144,7 @@
         "inv": "15",
         "client": "Jenson Clark",
         "date": "05/11/2019",
+        "type": "out-state",
         "duedate": "12/11/2019",
         "total": "$678.00",
         "balance": "$678.00",

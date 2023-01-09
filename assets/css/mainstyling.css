@@ -123,8 +123,12 @@ hr {
   padding-left: 6rem;
   text-align: left;
 }
-.mtable tr td:nth-child(5),.mtable tr td:nth-child(6){
+.mtable tr td:nth-child(6),.mtable tr td:nth-child(7){
   color: #f58c93 !important;
+}
+
+.mtable tr td:nth-child(3){
+  color: #373840 !important;
 }
 
 .mtable tr:last-child td {
@@ -445,10 +449,12 @@ table .mtableth {
 .mcard.action {
   background-color: #f5e9eb;
   border: 1px solid #f5e9eb;
+  padding-top: 1rem;
+  padding-left: 1.5rem;
 }
 .l {
-  padding-left: 2rem;
-  margin-left: 2rem;
+  padding-left: 0.1rem;
+  margin-left: 0.5rem;
 }
 .tx {
   padding-top: -2rem;
@@ -957,7 +963,7 @@ a.text-light:hover, a.text-light:focus {
   align-self: flex-end;
   vertical-align: middle;
   justify-self: flex-end;
-  margin-left: 5.5rem;
+  margin-left: 3.1rem;
 }
 
 .c2{

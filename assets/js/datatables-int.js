@@ -1,33 +1,19 @@
 /**
  * this table data and json related file
+ * ^[A-Fa-f]+$,
  * * */
 
 var mjsondata;
 var mstatus = [];
 var mclient = [];
 
-const filterGlobal = (cval) => {
+const filterGlobal = (cval, reg = false, sm = true) => {
   console.log("filter", cval);
-  $("#dataTable")
-    .DataTable()
-    .search(
-      cval,
-      $("#global_regex").prop("checked"),
-      $("#global_smart").prop("checked")
-    )
-    .draw();
+  $("#dataTable").DataTable().search(cval, reg, sm).draw();
 };
 
-const filterColumn = (cval) => {
-  $("#dataTable")
-    .DataTable()
-    .column(cval.key)
-    .search(
-      cval.val,
-      $("#col" + i + "_regex").prop("checked"),
-      $("#col" + i + "_smart").prop("checked")
-    )
-    .draw();
+const filterColumn = (cval, reg = false, sm = true) => {
+  $("#dataTable").DataTable().column(cval.key).search(cval.val, reg, sm).draw();
 };
 
 $(() => {
@@ -60,6 +46,7 @@ $(() => {
       columns: [
         { data: "inv" },
         { data: "client" },
+        { data: "type" },
         { data: "date" },
         { data: "duedate" },
         { data: "total" },
@@ -72,28 +59,81 @@ $(() => {
           render: function (a, b, data, d) {
             var ret;
             data.status.toLowerCase() == "draft"
-              ? (ret = `<button type='button' class='btn btn-danger c3 afh' id='draft'> ${data.status} </button>`)
+              ? (ret = `<button type='button' class='btn btn-danger c3 afh draft'> ${data.status} </button>`)
               : data.status.toLowerCase() == "paid"
-              ? (ret = `<button type='button' class='btn btn-primary c2 afh' id='paid'> ${data.status} </button>`)
+              ? (ret = `<button type='button' class='btn btn-primary c2 afh paid'> ${data.status} </button>`)
               : data.status.toLowerCase() == "partial payment"
-              ? (ret = `<button type='button' class='btn btn-info c1 afh'  id='pp'> ${data.status} </button>`)
+              ? (ret = `<button type='button' class='btn btn-info c1 afh pp'> ${data.status} </button>`)
               : (ret = "null");
             return ret;
           }
         }
       ]
     });
-  }).done(() => {
-    console.log("client", mclient);
-    console.log("status", mstatus);
-  });
+    // these below are cta action function reducers or cta logic
+    $(".draft").on("keyup click", () => {
+      filterGlobal("Draft");
+      $("#statusMenuButton span").text("Draft");
+    });
 
-  $("#draft").on("keyup click", () => {
-    console.log("filter d");
-    filterColumn({ key: "status", val: "Draft" });
-  });
-  $("#paid").on("keyup click", () => {
-    console.log("filter p");
-    filterGlobal("Paid");
+    $(".paid").on("keyup click", () => {
+      filterGlobal("Paid");
+      $("#statusMenuButton span").text("Paid");
+    });
+
+    $(".pp").on("keyup click", () => {
+      filterGlobal("Partial Payment");
+      $("#statusMenuButton span").text("Partial");
+    });
+
+    $(".any").on("keyup click", () => {
+      console.log("filter ay");
+      filterGlobal("", false, true);
+      $("#clientMenuButton span").text("Any");
+      $("#statusMenuButton span").text("Any");
+    });
+
+    $("#in,#out").on("keyup click", (e) => {
+      filterGlobal(e.target.id == "in" ? "in-state" : "out-state", false, true);
+      $("#clientMenuButton span").text(
+        e.target.id == "in" ? "In-State" : "Out-State"
+      );
+    });
+
+    $("#date,#ddate").on("keyup click", (e) => {
+      filterGlobal(
+        e.target.id == "date" ? "05/11/2019" : "12/11/2019",
+        false,
+        true
+      );
+    });
+
+    $("#in,#cn,#ct,#da,#dd,#to,#ba,#ps").on("keyup click", (e) => {
+      const myi =
+        e.target.id == "in"
+          ? 1
+          : e.target.id == "cn"
+          ? 2
+          : e.target.id == "ct"
+          ? 3
+          : e.target.id == "da"
+          ? 4
+          : e.target.id == "dd"
+          ? 5
+          : e.target.id == "to"
+          ? 6
+          : e.target.id == "ba"
+          ? 7
+          : 8;
+      $(".active").removeClass("active");
+      $(".ici" + myi).addClass("active");
+      $("#dataTable")
+        .DataTable()
+        .order([myi - 1, "desc"])
+        .draw();
+    });
+  }).done(() => {
+    // console.log("client", mclient);
+    // console.log("status", mstatus);
   });
 });
